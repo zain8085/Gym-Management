@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Signup Form Handling
     const signupForm = document.getElementById("signupForm");
     if (signupForm) {
         signupForm.addEventListener("submit", async (e) => {
@@ -12,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     name: document.getElementById("name").value,
                     email: document.getElementById("email").value,
                     password: document.getElementById("password").value,
-                    role: document.getElementById("role").value // Get role from dropdown
+                    role: document.getElementById("role").value 
                 })
             });
 
@@ -24,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const data = await response.json();
             alert("Signup successful! Please login.");
-            window.location.href = "login.html"; // Redirect to login page
+            window.location.href = "login.html"; 
         });
     }
 
@@ -51,11 +50,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const data = await response.json();
             localStorage.setItem("token", data.token);
-            localStorage.setItem("role", data.role); // Store user role
+            localStorage.setItem("role", data.role);
 
             alert("Login successful!");
 
-            // Redirect based on role
             window.location.href = data.role === "admin" ? "admin_dashboard.html" : "user_dashboard.html";
         });
     }

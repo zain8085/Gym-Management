@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Members</title>
+    <link rel="stylesheet" href="./css/ManageMembers.css">
+
+</head>
+
+<body>
+    <h2>👥 Manage Members</h2>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>👤 Name</th>
+                <th>📧 Email</th>
+            </tr>
+        </thead>
+        <tbody id="memberList"></tbody>
+    </table>
+
+    <br>
+    <a href="/public/admin_dashboard.html">Back to Dashboard</a>
+
+    <script>
+        function displayMembers() {
+            let members = JSON.parse(localStorage.getItem("members")) || [];
+            let list = document.getElementById("memberList");
+            list.innerHTML = "";
+            members.forEach((m, i) => {
+                list.innerHTML += `
+                    <tr>
+                        <td>${m.name}</td>
+                        <td>${m.email}</td>
+                        <td><button onclick="editMember(${i})">Update</button></td>
+                        <td><button onclick="deleteMember(${i})">Delete</button></td>
+                    </tr>`;
+            });
+        }
+
+        function deleteMember(index) {
+            let members = JSON.parse(localStorage.getItem("members")) || [];
+            members.splice(index, 1);
+            localStorage.setItem("members", JSON.stringify(members));
+            displayMembers();
+        }
+
+        function editMember(index) {
+            let members = JSON.parse(localStorage.getItem("members")) || [];
+            let newName = prompt("Enter new name:", members[index].name);
+            let newEmail = prompt("Enter new email:", members[index].email);
+            if (newName && newEmail) {
+                members[index] = { name: newName, email: newEmail };
+                localStorage.setItem("members", JSON.stringify(members));
+                displayMembers();
+            }
+        }
+
+        displayMembers();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assign Fee Package</title>
+    <link rel="stylesheet" href="./css/assignfee.css">
+</head>
+
+<body>
+    <h2>Assign Fee Package</h2>
+    <ul id="packageList"></ul>
+    <a href="/public/admin_dashboard.html">Back to Dashboard</a>
+
+    <script>
+        function assignPackages() {
+            let members = JSON.parse(localStorage.getItem("members")) || [];
+            let packages = JSON.parse(localStorage.getItem("packages")) || {};
+            let list = document.getElementById("packageList");
+            list.innerHTML = "";
+
+            members.forEach(m => {
+                let package = prompt(`Enter Fee Package for ${m.name}:`);
+                packages[m.email] = package;
+            });
+
+            localStorage.setItem("packages", JSON.stringify(packages));
+            alert("Packages Assigned!");
+        }
+
+        assignPackages();
+    </script>
+</body>
+
+</html>

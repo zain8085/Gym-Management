@@ -1,0 +1,371 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: #F5F5F5;
+    color: #333333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Header Styling */
+header {
+    width: 100%;
+    background-color: rgba(42, 43, 44, 0.7);
+    color: #FFFFFF;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+header .logo h1 {
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+header nav a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+header nav a:hover {
+    color: #E63946;
+    transform: scale(1.1);
+}
+
+/* Hero Section */
+.hero {
+    background: url("/Images/Nutrition.jpg") no-repeat center center/cover;
+   
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    flex-direction: column;
+    text-align: center;
+    animation: fadeIn 1.5s ease-out;
+}
+
+.hero h2 {
+    font-size: 50px;
+    font-weight: 900;
+    letter-spacing: 5px;
+    margin-bottom: 15px;
+    opacity: 0;
+    animation: fadeInText 1s ease-out forwards;
+}
+
+.hero p {
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.hero .cta-button {
+    background-color: #E63946;
+    color: #FFFFFF;
+    padding: 14px 40px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.hero .cta-button:hover {
+    background-color: #D62C1A;
+    transform: scale(1.05);
+}
+
+/* Service Details Section */
+/* Service Details Section */
+#service-details {
+    padding: 80px 20px;
+    text-align: center;
+    background-color: #FFFFFF;
+    width: 100%;
+    animation: slideUp 1s ease-out;
+}
+
+#service-details h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 50px;
+    color: #457B9D;
+    animation: fadeInText 1s ease-out forwards;
+}
+
+#service-details p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    animation: fadeInText 1.5s ease-out forwards;
+}
+
+/* Card Layout for Service Items */
+#service-details ul {
+    list-style: none;
+    margin-bottom: 20px;
+    text-align: center;
+    padding-left: 0;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    opacity: 0;
+    animation: fadeInText 2s ease-out forwards;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+}
+
+#service-details ul li {
+    flex: 1 1 calc(33.33% - 50px); /* Flex items will take 33.33% of the available width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+/* Individual card styling */
+.service-card {
+    background-color: #F9F9F9;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    max-width: 350px; /* Larger card size */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.service-card img {
+    width: 20em; 
+    height: 20em; /* Larger image size */
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    font-size: 24px; /* Larger text size for heading */
+    font-weight: 700;
+    color: #333333;
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    font-size: 16px; /* Larger font size for description */
+    color: #777777;
+}
+
+/* Animations for text */
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Adjust for small screens */
+@media (max-width: 768px) {
+    #service-details ul li {
+        flex: 1 1 calc(50% - 50px); /* Flex items will take 50% of the available width */
+    }
+
+    .service-card img {
+        width: 70px; /* Slightly larger image for tablets */
+        height: 70px;
+    }
+
+    .service-card h3 {
+        font-size: 22px;
+    }
+
+    .service-card p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    #service-details ul li {
+        flex: 1 1 100%; /* Stack the items on top of each other on mobile */
+    }
+
+    .service-card img {
+        width: 60px; /* Larger image for mobile */
+        height: 60px;
+    }
+
+    .service-card h3 {
+        font-size: 20px;
+    }
+
+    .service-card p {
+        font-size: 14px;
+    }
+}
+
+
+#service-details a.cta-button {
+    display: inline-block;
+    background-color: #E63946;
+    color: #FFFFFF;
+    padding: 14px 40px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 30px;
+    opacity: 0;
+    animation: fadeInText 2.5s ease-out forwards;
+}
+
+#service-details a.cta-button:hover {
+    background-color: #D62C1A;
+    transform: scale(1.05);
+}
+
+
+/* Footer Styling */
+footer {
+    width: 100%;
+    background-color: #457B9D;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .hero h2 {
+        font-size: 40px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    #service-details h2 {
+        font-size: 30px;
+    }
+
+    #service-details p {
+        font-size: 14px;
+    }
+
+    #service-details a.cta-button {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+
+    .service-img {
+        max-width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    #service-details a.cta-button {
+        font-size: 14px;
+        padding: 8px 18px;
+    }
+
+    .hero h2 {
+        font-size: 35px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    #service-details h2 {
+        font-size: 24px;
+    }
+
+    #service-details p {
+        font-size: 12px;
+    }
+
+    .service-img {
+        max-width: 100%;
+    }
+}
+
+/* Smooth scroll effect */
+html {
+    scroll-behavior: smooth;
+}

@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: #F5F5F5;
+    color: #333333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Heading Styling */
+h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #457B9D;
+}
+
+/* Table Styling */
+table {
+    width: 80%;
+    margin: 20px 0;
+    border-collapse: collapse;
+    background-color: #FFFFFF;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+thead {
+    background-color: #457B9D;
+    color: #FFFFFF;
+    font-size: 18px;
+}
+
+th,
+td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #CCCCCC;
+}
+
+td button {
+    padding: 8px 16px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Button Styling for Edit and Delete */
+td button:nth-child(1) {
+    background-color: #E63946;
+    color: white;
+}
+
+td button:nth-child(2) {
+    background-color: #D62C1A;
+    color: white;
+}
+
+td button:hover {
+    transform: scale(1.05);
+}
+
+/* Link Styling */
+a {
+    font-size: 16px;
+    color: #457B9D;
+    text-decoration: none;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+a:hover {
+    color: #E63946;
+    text-decoration: underline;
+}
+
+/* Responsive Design for Table */
+@media (max-width: 768px) {
+    table {
+        width: 100%;
+    }
+
+    th,
+    td {
+        font-size: 14px;
+    }
+
+    td button {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+}

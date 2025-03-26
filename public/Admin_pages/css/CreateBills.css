@@ -1,0 +1,167 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: #F5F5F5;
+    color: #333333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Heading Styling */
+h2 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #457B9D;
+    margin-bottom: 30px;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+form input {
+    padding: 12px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    border: 1px solid #CCCCCC;
+    border-radius: 5px;
+    outline: none;
+    transition: border 0.3s ease;
+}
+
+form input:focus {
+    border-color: #457B9D;
+}
+
+form button {
+    padding: 14px;
+    background-color: #457B9D;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #E63946;
+}
+
+/* Table Styling */
+table {
+    width: 80%;
+    max-width: 1000px;
+    margin: 20px 0;
+    border-collapse: collapse;
+    background-color: #FFFFFF;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+thead {
+    background-color: #457B9D;
+    color: #FFFFFF;
+    font-size: 18px;
+}
+
+th,
+td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #CCCCCC;
+}
+
+td button {
+    padding: 8px 16px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Button Styling for Download and Delete */
+td button:nth-child(1) {
+    background-color: #E63946;
+    color: white;
+}
+
+td button:nth-child(2) {
+    background-color: #D62C1A;
+    color: white;
+}
+
+td button:hover {
+    transform: scale(1.05);
+}
+
+/* Link Styling */
+a {
+    font-size: 16px;
+    color: #457B9D;
+    text-decoration: none;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+a:hover {
+    color: #E63946;
+    text-decoration: underline;
+}
+
+/* Responsive Design for Mobile and Tablets */
+@media (max-width: 768px) {
+    table {
+        width: 100%;
+    }
+
+    th,
+    td {
+        font-size: 14px;
+    }
+
+    td button {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+
+    form {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 30px;
+    }
+
+    form input,
+    form button {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    table {
+        font-size: 12px;
+    }
+}

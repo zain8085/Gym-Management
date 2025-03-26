@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assign Notifications</title>
+    <link rel="stylesheet" href="./css/assignNotification.css">
+  
+</head>
+
+<body>
+    <h2>Assign Notifications</h2>
+    <button onclick="assignNotifications()">Assign Monthly Notifications</button>
+    <a href="/public/admin_dashboard.html">Back to Dashboard</a>
+
+    <script>
+        function assignNotifications() {
+            let members = JSON.parse(localStorage.getItem("members")) || [];
+            let notifications = [];
+
+            members.forEach(m => {
+                notifications.push(`Reminder: ${m.name}, your monthly fee is due!`);
+            });
+
+            localStorage.setItem("notifications", JSON.stringify(notifications));
+            alert("Notifications Assigned!");
+        }
+    </script>
+</body>
+
+</html>

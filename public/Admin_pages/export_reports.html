@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Export Reports</title>
+    <link rel="stylesheet" href="./css/exportReports.css">
+  
+</head>
+
+<body>
+    <h2>Export Reports</h2>
+    <button onclick="exportReports()">Download Reports</button>
+    <a href="/public/admin_dashboard.html">Back to Dashboard</a>
+
+    <script>
+        function exportReports() {
+            let bills = JSON.parse(localStorage.getItem("bills")) || [];
+            let report = "Name, Email, Amount\n";
+            bills.forEach(b => {
+                report += `${b.name}, ${b.email}, ${b.amount}\n`;
+            });
+
+            let blob = new Blob([report], { type: "text/csv" });
+            let link = document.createElement("a");
+            link.href = URL.createObjectURL(blob);
+            link.download = "gym_reports.csv";
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
+</body>
+
+</html>
