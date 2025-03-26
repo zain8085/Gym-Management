@@ -47,7 +47,3 @@ Feel free to fork the project, submit issues, and send pull requests to improve 
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-This updated description includes all the features for **Admin**, **Member**, and **User** roles in the Gym Management System and provides clear guidance on how to install and use the system.
